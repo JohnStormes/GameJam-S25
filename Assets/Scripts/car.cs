@@ -22,7 +22,7 @@ public class car : MonoBehaviour
 
     IEnumerator GenerateRandom() {
         while (true) {
-            random = Random.Range(0, 5);
+            random = Random.Range(0, 4);
             if (random == 1)
                 animator.SetTrigger("wag");
             yield return new WaitForSeconds(1f);
