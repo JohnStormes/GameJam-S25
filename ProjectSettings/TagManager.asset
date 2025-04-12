@@ -6,6 +6,8 @@ TagManager:
   tags:
   - TitleScreen
   - Room
+  - RoomFade
+  - TitleFade
   layers:
   - Default
   - TransparentFX

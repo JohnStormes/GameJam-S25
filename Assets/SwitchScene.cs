@@ -18,8 +18,8 @@ public class SwitchScene : StateMachineBehaviour
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        loader = GameObject.FindGameObjectWithTag("TitleScreen").GetComponent<SceneLoader>();
-        loader.HideUI();
+        loader = GameObject.FindGameObjectWithTag("TitleFade").GetComponent<SceneLoader>();
+        loader.ShowUI();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

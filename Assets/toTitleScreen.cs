@@ -12,7 +12,7 @@ public class toTitleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        loader = GameObject.FindGameObjectWithTag("Room").GetComponent<SceneLoader>();
+        loader = GameObject.FindGameObjectWithTag("RoomFade").GetComponent<SceneLoader>();
     }
 
     // Update is called once per frame
@@ -21,9 +21,9 @@ public class toTitleScreen : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             
-            loader.HideUI();
+            loader.ShowUI();
 
-            Invoke("PreviousScene", 2);
+            Invoke("PreviousScene", 3/2);
             
         }
     }
