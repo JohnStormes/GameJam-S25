@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1327236993}
   - component: {fileID: 1327236995}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +251,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: open_door
+          m_StringArgument: open1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1424448581
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1424448583}
   - component: {fileID: 1424448586}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Frontdoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -400,7 +400,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -471,8 +471,8 @@ GameObject:
   - component: {fileID: 1588116336}
   - component: {fileID: 1588116337}
   m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
+  m_Name: Titlescreen
+  m_TagString: TitleScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,7 +571,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1588116337
 MonoBehaviour:
@@ -588,7 +588,6 @@ MonoBehaviour:
   myUIGroup: {fileID: 1588116336}
   fadeIn: 0
   fadeOut: 0
-  fade: 0
 --- !u!1 &1611680060
 GameObject:
   m_ObjectHideFlags: 0
