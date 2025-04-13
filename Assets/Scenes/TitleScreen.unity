@@ -337,7 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue_prefab: {fileID: 2657837967495132930, guid: f2822e71544ec364582e3bce715919fa, type: 3}
-  background_screen: {fileID: 1588116331}
 --- !u!1 &814305422
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +434,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+  parent: {fileID: 1424448581}
 --- !u!1 &1327236991
 GameObject:
   m_ObjectHideFlags: 0

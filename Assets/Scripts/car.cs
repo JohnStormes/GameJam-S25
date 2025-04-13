@@ -6,14 +6,18 @@ public class car : MonoBehaviour
 {
     private Animator animator;
     public GameObject dialogue_prefab;
-    public GameObject title_screen;
+    public GameObject parent;
     int random;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        GameObject dialogue = Instantiate(dialogue_prefab, title_screen.transform);
+        if (LoadScene.first_load == 1)
+        {
+            GameObject dialogue = Instantiate(dialogue_prefab, parent.transform);
+        }
+
         StartCoroutine(GenerateRandom());
     }
 

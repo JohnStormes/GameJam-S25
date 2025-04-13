@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue_prefab: {fileID: 8347924966267760566, guid: e857b0c4398a33e4798fecd599fae48e, type: 3}
-  title_screen: {fileID: 1401236965}
+  parent: {fileID: 1051847556}
 --- !u!95 &140064592
 Animator:
   serializedVersion: 5

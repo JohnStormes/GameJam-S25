@@ -7,6 +7,7 @@ public class ButtonDisabler : MonoBehaviour
 
     void Start()
     {
+        LoadScene.first_load += 1;
         button.interactable = true;
     }
 
