@@ -11,7 +11,8 @@ public class FrameHandler : MonoBehaviour
     public Sprite[] frame_src;
     // instantiated static sprite and texture2D arrays of 5 random cats and frames
     public static Texture2D[] cat_textures;
-    public static Sprite[] cat_sprites;
+    public static Sprite[] cat_sprites; // initialized in puzzle script
+    public static int[] cat_values;
     public static Sprite[] frames;
     // aspect ratio values: rows - image number, cols - x or y coord of aspect ratio
     public static int[,] aspect_ratios;
@@ -30,6 +31,7 @@ public class FrameHandler : MonoBehaviour
         {
             cat_textures = new Texture2D[5];
             cat_sprites = new Sprite[5];
+            cat_values = new int[5];
             frames = new Sprite[5];
             aspect_ratios = new int[5,2];
             for (int i = 0; i < 5; i++)
@@ -39,7 +41,8 @@ public class FrameHandler : MonoBehaviour
                 
                 // set static cat Texture2D variables
                 cat_textures[i] = cat_src_textures[random_cat];
-                cat_sprites[i] = cat_src_sprites[random_cat];
+                cat_values[i] = random_cat;
+                //cat_sprites[i] = cat_src_sprites[random_cat];
                 
                 // set static frame and aspect ratio variables
                 // FRAME ORDER: 1:1, 2:3, 3:4, 4:3, 3:2
