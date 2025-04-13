@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class cat_outside : MonoBehaviour
 {
+    bool moving;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +14,18 @@ public class cat_outside : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (moving)
+            MoveTo(new Vector3(75, -111, 0), 150);
     }
 
-    void MoveCat() {
-        Debug.Log("bruh");
-        transform.GetComponent<RectTransform>().anchoredPosition = new Vector3(75, -111, 0);
+    void StartMove() {
+        moving = true;
+    }
+    void StopMove() {
+        moving = false;
+    }
+
+    void MoveTo(Vector3 newPosition, float speed) {
+        transform.GetComponent<RectTransform>().anchoredPosition = Vector3.MoveTowards(transform.GetComponent<RectTransform>().anchoredPosition, newPosition, speed * Time.deltaTime);
     }
 }
