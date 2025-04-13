@@ -25,7 +25,6 @@ public class FrameHandler : MonoBehaviour
     
     void Awake()
     {
-        first_run = false;
         // instantiate static variables with random values
         if (first_run)
         {
@@ -70,5 +69,6 @@ public class FrameHandler : MonoBehaviour
                 }
             }
         }
+        first_run = false;
     }
 }
