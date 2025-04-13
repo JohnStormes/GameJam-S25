@@ -122,14 +122,21 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: StartMove
+    functionName: StartMoveLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.7
-    functionName: StopMove
+    functionName: StartCatDialogue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.7
+    functionName: StopMoveLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
