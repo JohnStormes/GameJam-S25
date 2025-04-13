@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
+    public AudioSource src;
+    public AudioClip door_opening;
     private Animator cat_animator;
     public static int first_load = 0;
 
@@ -31,5 +33,17 @@ public class LoadScene : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("continue");
         }
+    }
+    
+    public void OpenDoor()
+    {
+        StartCoroutine(PlayDoorSound());
+    }
+
+    IEnumerator PlayDoorSound()
+    {
+        yield return new WaitForSeconds(0.8f);
+        src.clip = door_opening;
+        src.Play();
     }
 }
