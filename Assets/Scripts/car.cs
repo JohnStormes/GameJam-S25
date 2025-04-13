@@ -13,7 +13,11 @@ public class car : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        GameObject dialogue = Instantiate(dialogue_prefab, title_screen.transform);
+        if (LoadScene.first_load == 1)
+        {
+            GameObject dialogue = Instantiate(dialogue_prefab, title_screen.transform);
+        }
+
         StartCoroutine(GenerateRandom());
     }
 
