@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 28549954}
   - component: {fileID: 28549953}
   - component: {fileID: 28549952}
+  - component: {fileID: 28549956}
   m_Layer: 5
   m_Name: EndGame
   m_TagString: Untagged
@@ -424,6 +425,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &28549956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28549951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57411ba0e0a0d9a41aef3b897839ba93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &383396244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1033,7 @@ Animator:
   m_GameObject: {fileID: 1592417534}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31c37d62ddc7d2649ab085dbe4386f0b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a23a753974a48e4d81eb1b9321ba086, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
