@@ -6,7 +6,7 @@ public class cat_outside : MonoBehaviour
 {
     bool moving_left, moving_right;
     public GameObject dialogue_prefab;
-    public GameObject background_screen;
+    public GameObject parent;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +41,6 @@ public class cat_outside : MonoBehaviour
     }
 
     void StartCatDialogue() {
-        GameObject dialogue = Instantiate(dialogue_prefab, background_screen.transform);
+        GameObject dialogue = Instantiate(dialogue_prefab, parent.transform);
     }
 }

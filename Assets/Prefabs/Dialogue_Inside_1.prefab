@@ -228,7 +228,8 @@ MonoBehaviour:
   cat_animator: {fileID: 0}
   door_animator: {fileID: 0}
   src: {fileID: 8602808486756102755}
-  clip: {fileID: 8300000, guid: 775161af2c45fe7468d3fdaa47ec24cf, type: 3}
+  clip1: {fileID: 8300000, guid: 775161af2c45fe7468d3fdaa47ec24cf, type: 3}
+  clip2: {fileID: 8300000, guid: ed9de8512b12bde4e856559c4423856a, type: 3}
   title_screen: 0
   lines:
   - Make yourself at home!

@@ -9,7 +9,8 @@ public class DialogueBox : MonoBehaviour
     public Animator cat_animator;
     public Animator door_animator;
     public AudioSource src;
-    public AudioClip clip;
+    public AudioClip clip1;
+    public AudioClip clip2;
     public bool title_screen;
     public string[] lines;
     public float textSpeed;
@@ -23,7 +24,7 @@ public class DialogueBox : MonoBehaviour
         if (title_screen)
             door_animator = GameObject.Find("Frontdoor").GetComponent<Animator>();
         textComponent.text = string.Empty;
-        src.clip = clip;
+        src.clip = clip1;
         StartDialogue();
     }
 
@@ -51,7 +52,19 @@ public class DialogueBox : MonoBehaviour
         foreach(char c in lines[index]) {
             textComponent.text += c;
             if (c != ' ')
-                src.Play();
+            {
+                if (c == '?')
+                {
+                    src.clip = clip2;
+                    src.Play();
+                }
+                else
+                {
+                    src.clip = clip1;
+                    src.Play();
+                }
+            }
+
             yield return new WaitForSeconds(textSpeed);
         }
 
