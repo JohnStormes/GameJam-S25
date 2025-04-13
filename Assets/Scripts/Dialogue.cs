@@ -9,8 +9,11 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+    private bool can_update = false;
 
     private int index;
+
+    Renderer renderer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("return")) {
+        if (can_update && Input.GetKeyDown("return")) {
             if (textComponent.text == lines[index]) {
                 NextLine();
             } else {
@@ -32,13 +35,14 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue() {
+    public void StartDialogue() {
         index = 0;
         StartCoroutine(TypeLine());
+        can_update = true;
     }
 
     IEnumerator TypeLine() {
-        foreach(char c in lines[index].ToCharArray()) {
+        foreach(char c in lines[index]) {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }

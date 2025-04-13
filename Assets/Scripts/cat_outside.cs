@@ -5,6 +5,8 @@ using UnityEngine;
 public class cat_outside : MonoBehaviour
 {
     bool moving;
+    public GameObject dialogue_prefab;
+    public GameObject title_screen;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,9 @@ public class cat_outside : MonoBehaviour
 
     void MoveTo(Vector3 newPosition, float speed) {
         transform.GetComponent<RectTransform>().anchoredPosition = Vector3.MoveTowards(transform.GetComponent<RectTransform>().anchoredPosition, newPosition, speed * Time.deltaTime);
+    }
+
+    void StartCatDialogue() {
+        GameObject dialogue = Instantiate(dialogue_prefab, title_screen.transform);
     }
 }
