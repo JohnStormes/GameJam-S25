@@ -19,6 +19,14 @@ public class ButtonHandler : MonoBehaviour
     public GameObject dialogue_prefab_4;
     public GameObject dialogue_prefab_5;
 
+    public GameObject[] frame_prefab = new GameObject[5];
+
+    // frame location constants
+    private int[] FRAME_X = { -250, -124, -26, 100, 216 };
+
+    private int Y_LESS_WIDTH = 21;
+    private int Y_MORE_WIDTH = 15;
+
     public GameObject parent;
     // Start is called before the first frame update
     void Awake()
@@ -66,17 +74,23 @@ public class ButtonHandler : MonoBehaviour
             {
                 case 1:
                     GameObject.Find("shard 1 button").SetActive(false);
+                    SetFrame(0);
                     GameObject dialogue = Instantiate(dialogue_prefab_1, parent.transform);
                     break;
                 case 2:
                     GameObject.Find("shard 1 button").SetActive(false);
                     GameObject.Find("shard 2 button").SetActive(false);
+                    SetFrame(0);
+                    SetFrame(1);
                     Destroy(shard2);
                     break;
                 case 3:
                     GameObject.Find("shard 1 button").SetActive(false);
                     GameObject.Find("shard 2 button").SetActive(false);
                     GameObject.Find("shard 3 button").SetActive(false);
+                    SetFrame(0);
+                    SetFrame(1);
+                    SetFrame(2);
                     Destroy(shard3);
                     dialogue = Instantiate(dialogue_prefab_3, parent.transform);
                     break;
@@ -85,6 +99,10 @@ public class ButtonHandler : MonoBehaviour
                     GameObject.Find("shard 2 button").SetActive(false);
                     GameObject.Find("shard 3 button").SetActive(false);
                     GameObject.Find("shard 4 button").SetActive(false);
+                    SetFrame(0);
+                    SetFrame(1);
+                    SetFrame(2);
+                    SetFrame(3);
                     Destroy(shard4);
                     dialogue = Instantiate(dialogue_prefab_4, parent.transform);
                     break;
@@ -95,6 +113,11 @@ public class ButtonHandler : MonoBehaviour
                     GameObject.Find("shard 3 button").SetActive(false);
                     GameObject.Find("shard 4 button").SetActive(false);
                     GameObject.Find("shard 5 button").SetActive(false);
+                    SetFrame(0);
+                    SetFrame(1);
+                    SetFrame(2);
+                    SetFrame(3);
+                    SetFrame(4);
                     Destroy(shard5);
                     break;
             }
@@ -104,6 +127,27 @@ public class ButtonHandler : MonoBehaviour
         }
 
         solved_count++;
+    }
+
+    void SetFrame(int index)
+    {
+        int x = FRAME_X[index];
+        Sprite cat = FrameHandler.cat_sprites[index];
+        Sprite frame = FrameHandler.frames[index];
+        int asp_width = FrameHandler.aspect_ratios[index, 0];
+        int asp_height = FrameHandler.aspect_ratios[index, 1];
+        int y;
+        if (asp_width >= asp_height)
+            y = Y_LESS_WIDTH;
+        else
+        {
+            y = Y_MORE_WIDTH;
+        }
+        
+        GameObject new_frame = Instantiate(frame_prefab[index], parent.transform);
+        new_frame.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
+        new_frame.GetComponent<Image>().sprite = frame;
+        new_frame.name = "frame " + index;
     }
 
     // Update is called once per frame
