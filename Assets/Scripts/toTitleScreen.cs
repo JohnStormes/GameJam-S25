@@ -23,7 +23,7 @@ public class toTitleScreen : MonoBehaviour
             
             loader.ShowUI();
 
-            Invoke("PreviousScene", 3/2);
+            Invoke("PreviousScene", 1.3f);
             
         }
     }
