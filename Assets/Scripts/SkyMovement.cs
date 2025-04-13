@@ -6,7 +6,7 @@ public class SkyMovement : MonoBehaviour
 {
     int START_POS = -1450;
     int END_POS = 1450;
-    float SPEED = 0.005f;
+    float SPEED = 5f;
     [SerializeField] GameObject sky2;
 
     // Start is called before the first frame update
@@ -20,8 +20,8 @@ public class SkyMovement : MonoBehaviour
     void Update()
     {
         // move the images
-        transform.position = new Vector3(transform.position.x + SPEED, transform.position.y, 0);
-        sky2.transform.position = new Vector3(sky2.transform.position.x + SPEED, sky2.transform.position.y, 0);
+        transform.position = new Vector3(transform.position.x + Time.deltaTime * SPEED, transform.position.y, 0);
+        sky2.transform.position = new Vector3(sky2.transform.position.x + Time.deltaTime * SPEED, sky2.transform.position.y, 0);
 
         // reset an image if it goes too far
         if (transform.GetComponent<RectTransform>().anchoredPosition.x > END_POS)
